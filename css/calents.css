@@ -1,0 +1,15 @@
+/* Asegurar que el footer esté siempre al final de la página */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima de la página */
+}
+.content {
+    flex: 1; /* Hace que el contenido ocupe el espacio restante */
+}
+footer {
+    background-color: #343a40; /* Color oscuro para el footer */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
