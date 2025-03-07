@@ -1,11 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Food Truck</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <h1> Index en proceso </h1>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Food Truck</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menjarDropdown" role="button" data-bs-toggle="dropdown">Menjar</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Feds</a></li>
+                            <li><a class="dropdown-item" href="#">Calents</a></li>
+                            <li><a class="dropdown-item" href="#">Dolços</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="quisom.html">Qui Som</a></li>
+                </ul>
+                <span id="welcomeMessage" class="welcome-message"></span>
+                <button class="btn btn-primary me-2" id="loginButton" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button class="btn btn-danger" id="logoutButton" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuari</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contrasenya</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
+                    <button type="button" class="btn btn-primary" onclick="login()">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb" class="container mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Inici</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Menú</li>
+        </ol>
+    </nav>
+    
+    <!-- Carrusel -->
+    <div class="carousel-container">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/default.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/default.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/default.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+    <!-- Descripción de quienes somos -->
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">Nosaltres</h2>
+                <p class="lead">Som una Food Truck especialitzada en sushi fresc i autèntic. El nostre objectiu és portar l'autèntica cuina japonesa a tots els racons, oferint una experiència gastronòmica única i de qualitat.</p>
+                <p>Amb els nostres ingredients frescos i la nostra tècnica tradicional, preparem cada peça amb cura i dedicació per oferir-te el millor sushi que pots trobar en una Food Truck.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="./img/default.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Entrepà Especial</h5>
+                        <p class="card-text">Deliciós entrepà de pernil ibèric.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="./img/default.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Hamburguesa Premium</h5>
+                        <p class="card-text">Hamburguesa 100% vedella.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="./img/default.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nigiri</h5>
+                        <p class="card-text">Nigiri 100% vedella amb formatge.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="./img/default.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Uramaki</h5>
+                        <p class="card-text">Uramaki 100% vedella amb formatge.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>Segueix-nos a les xarxes socials!</p>
+    </footer>
+
+    <script>
+        // Inicializar el carrusel
+        document.addEventListener('DOMContentLoaded', function() {
+            var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
+                interval: 3000, // Cambia de imagen cada 3 segundos
+                wrap: true
+            });
+        });
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username && password) {
+                document.getElementById('welcomeMessage').textContent = `Benvingut, ${username}!`;
+                document.getElementById('loginButton').style.display = 'none';
+                document.getElementById('logoutButton').style.display = 'block';
+                document.getElementById('loginModal').querySelector('.btn-close').click();
+            }
+        }
+
+        function logout() {
+            document.getElementById('welcomeMessage').textContent = '';
+            document.getElementById('loginButton').style.display = 'block';
+            document.getElementById('logoutButton').style.display = 'none';
+        }
+
+        document.getElementById('logoutButton').addEventListener('click', logout);
+    </script>
 </body>
 </html>
