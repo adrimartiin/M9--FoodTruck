@@ -1,0 +1,25 @@
+.welcome-message {
+    color: white;
+    margin-right: 15px;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.carousel-item {
+    height: 500px;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    background-color: #f8f9fa;
+} 
