@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Truck</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Food Truck</a>
+            <a class="navbar-brand" href="#"><img src="./img/logo.png"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="menjarDropdown" role="button" data-bs-toggle="dropdown">Menjar</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="menjarDropdown" role="button"
+                            data-bs-toggle="dropdown">Menjar</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Feds</a></li>
                             <li><a class="dropdown-item" href="#">Calents</a></li>
@@ -28,13 +32,17 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="quisom.html">Qui Som</a></li>
                 </ul>
+                <h1 class="navbar-title">SushiTrack</h1>
                 <span id="welcomeMessage" class="welcome-message"></span>
-                <button class="btn btn-primary me-2" id="loginButton" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-                <button class="btn btn-danger" id="logoutButton" style="display: none;">Logout</button>
+                <button class="btn btn-primary me-2" id="loginButton" data-bs-toggle="modal"
+                    data-bs-target="#loginModal" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Inicia sessió per accedir a més funcionalitats">Login</button>
+                <button class="btn btn-danger" id="logoutButton" style="display: none;" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Tanca la teva sessió">Logout</button>
             </div>
         </div>
     </nav>
-    
+
     <!-- Modal de Login -->
     <div class="modal fade" id="loginModal" tabindex="-1">
         <div class="modal-dialog">
@@ -56,13 +64,16 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" class="btn btn-primary" onclick="login()">Entrar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Tanca la finestra de login">Tancar</button>
+                    <button type="button" class="btn btn-primary" onclick="login()" data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Confirma les teves credencials per iniciar sessió">Entrar</button>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Breadcrumbs -->
     <nav aria-label="breadcrumb" class="container mt-3">
         <ol class="breadcrumb">
@@ -70,7 +81,7 @@
             <li class="breadcrumb-item active" aria-current="page">Menú</li>
         </ol>
     </nav>
-    
+
     <!-- Carrusel -->
     <div class="carousel-container">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -85,10 +96,12 @@
                     <img src="./img/default.png" class="d-block w-100" alt="...">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"
+                data-bs-toggle="tooltip" data-bs-placement="left" title="Imatge anterior">
                 <span class="carousel-control-prev-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"
+                data-bs-toggle="tooltip" data-bs-placement="right" title="Imatge següent">
                 <span class="carousel-control-next-icon"></span>
             </button>
         </div>
@@ -98,72 +111,170 @@
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
                 <h2 class="mb-4">Nosaltres</h2>
-                <p class="lead">Som una Food Truck especialitzada en sushi fresc i autèntic. El nostre objectiu és portar l'autèntica cuina japonesa a tots els racons, oferint una experiència gastronòmica única i de qualitat.</p>
-                <p>Amb els nostres ingredients frescos i la nostra tècnica tradicional, preparem cada peça amb cura i dedicació per oferir-te el millor sushi que pots trobar en una Food Truck.</p>
+                <p class="lead">Som una Food Truck especialitzada en sushi fresc i autèntic. El nostre objectiu és
+                    portar l'autèntica cuina japonesa a tots els racons, oferint una experiència gastronòmica única i de
+                    qualitat.</p>
+                <p>Amb els nostres ingredients frescos i la nostra tècnica tradicional, preparem cada peça amb cura i
+                    dedicació per oferir-te el millor sushi que pots trobar en una Food Truck.</p>
             </div>
         </div>
     </div>
 
     <!-- Cards -->
     <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card">
+        <div class="row g-4">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100">
                     <img src="./img/default.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Entrepà Especial</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Entrepà Especial</h5>
+                            <div>
+                                <i class="fas fa-thumbs-up text-success me-2" style="cursor: pointer;"></i>
+                                <i class="fas fa-thumbs-down text-danger" style="cursor: pointer;"></i>
+                            </div>
+                        </div>
                         <p class="card-text">Deliciós entrepà de pernil ibèric.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100">
                     <img src="./img/default.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Hamburguesa Premium</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Hamburguesa Premium</h5>
+                            <div>
+                                <i class="fas fa-thumbs-up text-success me-2" style="cursor: pointer;"></i>
+                                <i class="fas fa-thumbs-down text-danger" style="cursor: pointer;"></i>
+                            </div>
+                        </div>
                         <p class="card-text">Hamburguesa 100% vedella.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100">
                     <img src="./img/default.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Nigiri</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Nigiri</h5>
+                            <div>
+                                <i class="fas fa-thumbs-up text-success me-2" style="cursor: pointer;"></i>
+                                <i class="fas fa-thumbs-down text-danger" style="cursor: pointer;"></i>
+                            </div>
+                        </div>
                         <p class="card-text">Nigiri 100% vedella amb formatge.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100">
                     <img src="./img/default.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Uramaki</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Uramaki</h5>
+                            <div>
+                                <i class="fas fa-thumbs-up text-success me-2" style="cursor: pointer;"></i>
+                                <i class="fas fa-thumbs-down text-danger" style="cursor: pointer;"></i>
+                            </div>
+                        </div>
                         <p class="card-text">Uramaki 100% vedella amb formatge.</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Paginación -->
+        <nav aria-label="Navegación de páginas" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#page1">1</a></li>
+                <li class="page-item"><a class="page-link" href="#page2">2</a></li>
+                <li class="page-item"><a class="page-link" href="#page3">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#page2">Següent</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center p-3 mt-4">
-        <p>Segueix-nos a les xarxes socials!</p>
+    <footer class="bg-dark text-white p-4 mt-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <h5><i class="fas fa-map-marker-alt me-2"></i>On Ens Trobes</h5>
+                    <p><i class="fas fa-location-dot me-2"></i>Carrer de la Sushi, 123<br>08001 Barcelona</p>
+                    <p><i class="far fa-clock me-2"></i>Dilluns a Divendres: 11:00 - 23:00</p>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <h5>Segueix-nos</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/sushitrack" class="text-white me-3"><i
+                                class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://www.facebook.com/sushitrack" class="text-white me-3"><i
+                                class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://www.twitter.com/sushitrack" class="text-white"><i
+                                class="fab fa-twitter fa-2x"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-md-end">
+                    <h5><i class="fas fa-store me-2"></i>Qui Som</h5>
+                    <p><i class="fas fa-truck me-2"></i>SushiTrack és la teva Food Truck especialitzada en sushi fresc i
+                        autèntic. Portem l'autèntica cuina japonesa a tots els racons.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!-- Alerta de Cookies -->
+    <div class="cookie-alert" id="cookieAlert">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-8 text-center text-md-start">
+                    <p class="mb-0">
+                        <i class="fas fa-cookie-bite me-2"></i>
+                        Utilitzem cookies per millorar la teva experiència. Si continues navegant, acceptes la nostra
+                        <a href="#" class="text-white text-decoration-underline">política de cookies</a>.
+                    </p>
+                </div>
+                <div class="col-12 col-md-4 text-center text-md-end">
+                    <button class="btn btn-outline-light btn-sm me-2" onclick="rechazarCookies()">Rebutjar</button>
+                    <button class="btn btn-primary btn-sm" onclick="aceptarCookies()">Acceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Inicializar el carrusel
-        document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar el carrusel y los tooltips
+        document.addEventListener('DOMContentLoaded', function () {
             var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
-                interval: 3000, // Cambia de imagen cada 3 segundos
+                interval: 3000,
                 wrap: true
             });
+
+            // Inicializar todos los tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            // Verificar si ya se han aceptado las cookies
+            if (!localStorage.getItem('cookiesAceptadas')) {
+                document.getElementById('cookieAlert').style.display = 'block';
+            } else {
+                document.getElementById('cookieAlert').style.display = 'none';
+            }
         });
 
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-            
+
             if (username && password) {
                 document.getElementById('welcomeMessage').textContent = `Benvingut, ${username}!`;
                 document.getElementById('loginButton').style.display = 'none';
@@ -179,6 +290,21 @@
         }
 
         document.getElementById('logoutButton').addEventListener('click', logout);
+
+        // Funciones para aceptar/rechazar cookies jugando con display none 
+        document.addEventListener('onload', function () {
+            function aceptarCookies() {
+                localStorage.setItem('cookiesAceptadas', 'true');
+                document.getElementById('cookieAlert').style.display = 'none';
+            }
+
+            function rechazarCookies() {
+                localStorage.setItem('cookiesAceptadas', 'false');
+                document.getElementById('cookieAlert').style.display = 'none';
+            }
+        })
+
     </script>
 </body>
+
 </html>
