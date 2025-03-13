@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tempura de Gambes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar millorada -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" alt="SushiTrack Logo" height="40"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menjarDropdown" role="button" data-bs-toggle="dropdown">Menjar</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="calent1.html">Ramen amb sushi</a></li>
+                            <li><a class="dropdown-item" href="calent2.html">Takoyaki</a></li>
+                            <li><a class="dropdown-item" href="calent3.html">Tempura de Gambes</a></li>
+                            <li><a class="dropdown-item" href="calent4.html">Gyoza</a></li>
+                            <li><a class="dropdown-item" href="fred1.html">Sashimi de Salmó</a></li>
+                            <li><a class="dropdown-item" href="fred2.html">Maki Sushi de Tonyina</a></li>
+                            <li><a class="dropdown-item" href="fred3.html">Nigiri de Lluç Negre</a></li>
+                            <li><a class="dropdown-item" href="fred4.html">Poke Bowl</a></li>
+                            <li><a class="dropdown-item" href="dolc1.html">Dorayaki</a></li>
+                            <li><a class="dropdown-item" href="dolc2.html">Mochi de Te Verd</a></li>
+                            <li><a class="dropdown-item" href="dolc3.html">Taiyaki</a></li>
+                            <li><a class="dropdown-item" href="dolc4.html">Gelat de Sèsam Negre</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="quisom.html">Qui Som</a></li>
+                </ul>
+                <h1 class="navbar-title text-white">SushiTrack</h1>
+                <button class="btn btn-primary me-2" id="loginButton" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button class="btn btn-danger" id="logoutButton" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <img src="../img/tempura.jpg" class="card-img-top" alt="Tempura de Gambes">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Tempura de Gambes</h2>
+                        <p class="card-text">Gambes arrebossades i fregides, cruixents i delicioses.</p>
+                        <p class="fw-bold">💰 Preu: 10€ ⭐ Valoració: 4.5/5</p>
+                        <a href="../index.html" class="btn btn-primary">Torna a l'inici</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white p-4 mt-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <h5><i class="fas fa-map-marker-alt me-2"></i>On Ens Trobes</h5>
+                    <p><i class="fas fa-location-dot me-2"></i>Carrer de la Sushi, 123<br>08001 Barcelona</p>
+                    <p><i class="far fa-clock me-2"></i>Dilluns a Divendres: 11:00 - 23:00</p>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <h5>Segueix-nos</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/sushitrack" class="text-white me-3"><i
+                                class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://www.facebook.com/sushitrack" class="text-white me-3"><i
+                                class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://www.twitter.com/sushitrack" class="text-white"><i
+                                class="fab fa-twitter fa-2x"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-md-end">
+                    <h5><i class="fas fa-store me-2"></i>Qui Som</h5>
+                    <p><i class="fas fa-truck me-2"></i>SushiTrack és la teva Food Truck especialitzada en sushi fresc i
+                        autèntic. Portem l'autèntica cuina japonesa a tots els racons.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializar el carrusel y los tooltips
+        document.addEventListener('DOMContentLoaded', function () {
+            var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
+                interval: 3000,
+                wrap: true
+            });
+
+            // Inicializar todos los tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            // Verificar si ya se han aceptado las cookies
+            if (!localStorage.getItem('cookiesAceptadas')) {
+                document.getElementById('cookieAlert').style.display = 'block';
+            } else {
+                document.getElementById('cookieAlert').style.display = 'none';
+            }
+        });
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                document.getElementById('welcomeMessage').textContent = `Benvingut, ${username}!`;
+                document.getElementById('loginButton').style.display = 'none';
+                document.getElementById('logoutButton').style.display = 'block';
+                document.getElementById('loginModal').querySelector('.btn-close').click();
+            }
+        }
+
+        function logout() {
+            document.getElementById('welcomeMessage').textContent = '';
+            document.getElementById('loginButton').style.display = 'block';
+            document.getElementById('logoutButton').style.display = 'none';
+        }
+
+        document.getElementById('logoutButton').addEventListener('click', logout);
+
+        // Funciones para aceptar/rechazar cookies jugando con display none 
+        document.addEventListener('onload', function () {
+            function aceptarCookies() {
+                localStorage.setItem('cookiesAceptadas', 'true');
+                document.getElementById('cookieAlert').style.display = 'none';
+            }
+
+            function rechazarCookies() {
+                localStorage.setItem('cookiesAceptadas', 'false');
+                document.getElementById('cookieAlert').style.display = 'none';
+            }
+        })
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
