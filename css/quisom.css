@@ -1,0 +1,20 @@
+.welcome-message {
+    color: white;
+    margin-right: 15px;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+.navbar {
+    padding: 0.5rem 1rem;
+    align-items: center;
+}
+.navbar-brand img {
+    height: 80px;
+}
+.navbar-title{
+    color: white;
+    text-align: center;
+}
+
