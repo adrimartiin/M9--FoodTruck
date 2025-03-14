@@ -10,39 +10,114 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar millorada -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" alt="SushiTrack Logo" height="40"></a>
+            <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" alt="Logo" height="40"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
+                    <!-- Menú principal con submenús -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="menjarDropdown" role="button" data-bs-toggle="dropdown">Menjar</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown">Menjar</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="calent1.html">Ramen amb sushi</a></li>
-                            <li><a class="dropdown-item" href="calent2.html">Takoyaki</a></li>
-                            <li><a class="dropdown-item" href="calent3.html">Tempura de Gambes</a></li>
-                            <li><a class="dropdown-item" href="calent4.html">Gyoza</a></li>
-                            <li><a class="dropdown-item" href="fred1.html">Sashimi de Salmó</a></li>
-                            <li><a class="dropdown-item" href="fred2.html">Maki Sushi de Tonyina</a></li>
-                            <li><a class="dropdown-item" href="fred3.html">Nigiri de Lluç Negre</a></li>
-                            <li><a class="dropdown-item" href="fred4.html">Poke Bowl</a></li>
-                            <li><a class="dropdown-item" href="dolc1.html">Dorayaki</a></li>
-                            <li><a class="dropdown-item" href="dolc2.html">Mochi de Te Verd</a></li>
-                            <li><a class="dropdown-item" href="dolc3.html">Taiyaki</a></li>
-                            <li><a class="dropdown-item" href="dolc4.html">Gelat de Sèsam Negre</a></li>
+                            <!-- Plats Calents -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Plats Calents</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="./calent1.html">Ramen amb sushi</a></li>
+                                    <li><a class="dropdown-item" href="./calent2.html">Takoyaki</a></li>
+                                    <li><a class="dropdown-item" href="./calent3.html">Tempura de Gambes</a></li>
+                                    <li><a class="dropdown-item" href="./calent4.html">Gyoza</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Plats Freds -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Plats Freds</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="./fred1.html">Sashimi de Salmó</a></li>
+                                    <li><a class="dropdown-item" href="./fred2.html">Maki Sushi de Tonyina</a></li>
+                                    <li><a class="dropdown-item" href="./fred3.html">Nigiri de Lluç Negre</a></li>
+                                    <li><a class="dropdown-item" href="./fred4.html">Poke Bowl</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Plats Dolços -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Plats Dolços</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="./dolc1.html">Dorayaki</a></li>
+                                    <li><a class="dropdown-item" href="./dolc2.html">Mochi de Te Verd</a></li>
+                                    <li><a class="dropdown-item" href="./dolc3.html">Taiyaki</a></li>
+                                    <li><a class="dropdown-item" href="./dolc4.html">Gelat de Sèsam Negre</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="quisom.html">Qui Som</a></li>
+
+                    <!-- Begudes -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="../begudes/begudes.html">Begudes</a>
+                    </li>
+
+                    <!-- Qui Som -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="../quisom/quisom.html">Qui Som</a>
+                    </li>
                 </ul>
-                <h1 class="navbar-title text-white">SushiTrack</h1>
-                <button class="btn btn-primary me-2" id="loginButton" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-                <button class="btn btn-danger" id="logoutButton" style="display: none;">Logout</button>
+                <h1 class="navbar-title">SushiTrack</h1>
+                <span id="welcomeMessage" class="welcome-message"></span>
+                <button class="btn btn-primary me-2" id="loginButton" data-bs-toggle="modal"
+                    data-bs-target="#loginModal" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Inicia sessió per accedir a més funcionalitats">Login</button>
+                <button class="btn btn-danger" id="logoutButton" style="display: none;" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Tanca la teva sessió">Logout</button>
             </div>
         </div>
+    </nav>
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuari</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contrasenya</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Tanca la finestra de login">Tancar</button>
+                    <button type="button" class="btn btn-primary" onclick="login()" data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Confirma les teves credencials per iniciar sessió">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb" class="container mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Inici</a></li>
+            <li class="breadcrumb-item"><a>Menjar</a></li>
+            <li class="breadcrumb-item"><a>Plat Calent</a></li>
+            <li class="breadcrumb-item"><a>Takoyaki</a></li>
+        </ol>
     </nav>
 
     <div class="container mt-5">
@@ -60,6 +135,26 @@
             </div>
         </div>
     </div>
+
+    <!-- Alerta de Cookies -->
+    <div class="cookie-alert" id="cookieAlert">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-8 text-center text-md-start">
+                    <p class="mb-0">
+                        <i class="fas fa-cookie-bite me-2"></i>
+                        Utilitzem cookies per millorar la teva experiència. Si continues navegant, acceptes la nostra
+                        <a href="#" class="text-white text-decoration-underline">política de cookies</a>.
+                    </p>
+                </div>
+                <div class="col-12 col-md-4 text-center text-md-end">
+                    <button class="btn btn-outline-light btn-sm me-2" onclick="rechazarCookies()">Rebutjar</button>
+                    <button class="btn btn-primary btn-sm" onclick="aceptarCookies()">Acceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-dark text-white p-4 mt-4">
         <div class="container">
             <div class="row g-4">
@@ -95,13 +190,13 @@
                 interval: 3000,
                 wrap: true
             });
-
+    
             // Inicializar todos los tooltips
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                 return new bootstrap.Tooltip(tooltipTriggerEl);
             });
-
+    
             // Verificar si ya se han aceptado las cookies
             if (!localStorage.getItem('cookiesAceptadas')) {
                 document.getElementById('cookieAlert').style.display = 'block';
@@ -109,11 +204,11 @@
                 document.getElementById('cookieAlert').style.display = 'none';
             }
         });
-
+    
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-
+    
             if (username && password) {
                 document.getElementById('welcomeMessage').textContent = `Benvingut, ${username}!`;
                 document.getElementById('loginButton').style.display = 'none';
@@ -121,15 +216,25 @@
                 document.getElementById('loginModal').querySelector('.btn-close').click();
             }
         }
-
+    
         function logout() {
             document.getElementById('welcomeMessage').textContent = '';
             document.getElementById('loginButton').style.display = 'block';
             document.getElementById('logoutButton').style.display = 'none';
         }
-
+    
         document.getElementById('logoutButton').addEventListener('click', logout);
-
+    
+        // Funciones para aceptar/rechazar cookies
+        function aceptarCookies() {
+            localStorage.setItem('cookiesAceptadas', 'true');
+            document.getElementById('cookieAlert').style.display = 'none';
+        }
+    
+        function rechazarCookies() {
+            localStorage.setItem('cookiesAceptadas', 'false');
+            document.getElementById('cookieAlert').style.display = 'none';
+        }
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
