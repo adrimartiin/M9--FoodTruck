@@ -71,4 +71,10 @@ p {
     transform: scale(1.2);
 }
 
+@media (max-width: 768px) {
+    .content-section.middle {
+        margin-left: 10px; /* Reduce el margen en pantallas más pequeñas */
+    }
+}
+
 
