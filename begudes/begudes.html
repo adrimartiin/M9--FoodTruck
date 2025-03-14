@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Truck</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/begudes.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" alt="Logo" height="40"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <!-- Menú principal con submenús -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown">Menjar</a>
+                        <ul class="dropdown-menu">
+                            <!-- Plats Calents -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Plats Calents</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="../menjar/calent1.html">Ramen amb sushi</a></li>
+                                    <li><a class="dropdown-item" href="../menjar/calent2.html">Takoyaki</a></li>
+                                    <li><a class="dropdown-item" href="../menjar/calent3.html">Tempura de Gambes</a></li>
+                                    <li><a class="dropdown-item" href="../menjar/calent4.html">Gyoza</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Plats Freds -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Plats Freds</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="../menjar/fred1.html">Sashimi de Salmó</a></li>
+                                    <li><a class="dropdown-item" href="../menjar/fred2.html">Maki Sushi de Tonyina</a></li>
+                                    <li><a class="dropdown-item" href="../menjar/fred3.html">Nigiri de Lluç Negre</a></li>
+                                    <li><a class="dropdown-item" href="../menjar/fred4.html">Poke Bowl</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Plats Dolços -->
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Plats Dolços</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="../menjar/dolc1.html">Dorayaki</a></li>
+                                    <li><a class="dropdown-item" href="../menjar/dolc2.html">Mochi de Te Verd</a></li>
+                                    <li><a class="dropdown-item" href="../menjar/dolc3.html">Taiyaki</a></li>
+                                    <li><a class="dropdown-item" href="../menjar/dolc4.html">Gelat de Sèsam Negre</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Begudes -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="./begudes.html">Begudes</a>
+                    </li>
+
+                    <!-- Qui Som -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="../quisom/quisom.html">Qui Som</a>
+                    </li>
+                </ul>
+                <h1 class="navbar-title">SushiTrack</h1>
+                <span id="welcomeMessage" class="welcome-message"></span>
+                <button class="btn btn-primary me-2" id="loginButton" data-bs-toggle="modal"
+                    data-bs-target="#loginModal" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                    title="Inicia sessió per accedir a més funcionalitats">Login</button>
+                <button class="btn btn-danger" id="logoutButton" style="display: none;" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Tanca la teva sessió">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuari</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contrasenya</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Tanca la finestra de login">Tancar</button>
+                    <button type="button" class="btn btn-primary" onclick="login()" data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Confirma les teves credencials per iniciar sessió">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección principal con las bebidas -->
+    <div class="container mt-5">
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Inici</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Begudes</li>
+        </ol>
+        <h2 class="section-title">Les nostres begudes</h2><br>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Bebida 1 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../img/sake.png" class="card-img-top" alt="Sake">
+                    <div class="card-body">
+                        <h5 class="card-title">Sake Premium</h5>
+                        <p class="card-text">Un sake japonés tradicional, suave y delicado, perfecto para acompañar el sushi.</p>
+                        <p class="card-text"><strong>Preu:</strong> 4.50€</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><i class="fas fa-star"></i> Recomanat per experts</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebida 2 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../img/te.png" class="card-img-top" alt="Té Verd">
+                    <div class="card-body">
+                        <h5 class="card-title">Té Verd Japonès</h5>
+                        <p class="card-text">Un té fresc y saludable, ideal para disfrutar con platos ligeros como el sushi.</p>
+                        <p class="card-text"><strong>Preu:</strong> 2.50€</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><i class="fas fa-leaf"></i> Opció saludable</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebida 3 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../img/coke.png" class="card-img-top" alt="Coca-Cola">
+                    <div class="card-body">
+                        <h5 class="card-title">Refresc Coca-Cola</h5>
+                        <p class="card-text">Una clàssica Coca-Cola per als amants dels refrescos.</p>
+                        <p class="card-text"><strong>Preu:</strong> 2.00€</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><i class="fas fa-glass-whiskey"></i> Ideal per compartir</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebida 4 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../img/limon.png" class="card-img-top" alt="Llimonada">
+                    <div class="card-body">
+                        <h5 class="card-title">Llimonada Fresca</h5>
+                        <p class="card-text">Una llimonada casolana amb un toc de menta per refrescar-se.</p>
+                        <p class="card-text"><strong>Preu:</strong> 3.00€</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><i class="fas fa-lemon"></i> Perfecte per l'estiu</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebida 5 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../img/agua.png" class="card-img-top" alt="Aigua Mineral">
+                    <div class="card-body">
+                        <h5 class="card-title">Aigua Mineral</h5>
+                        <p class="card-text">Aigua pura i refrescant per acompanyar qualsevol plat.</p>
+                        <p class="card-text"><strong>Preu:</strong> 1.50€</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><i class="fas fa-tint"></i> Opció bàsica</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebida 6 -->
+            <div class="col">
+                <div class="card h-100">
+                    <img src="../img/cerveza.png" class="card-img-top" alt="Cervesa Sake">
+                    <div class="card-body">
+                        <h5 class="card-title">Cervesa Artesanal</h5>
+                        <p class="card-text">Una cervesa artesanal lleugerament especiada, perfecta per als amants de la cervesa.</p>
+                        <p class="card-text"><strong>Preu:</strong> 3.50€</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted"><i class="fas fa-beer"></i> Gust intens</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white p-4 mt-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <h5><i class="fas fa-map-marker-alt me-2"></i>On Ens Trobes</h5>
+                    <p><i class="fas fa-location-dot me-2"></i>Carrer de la Sushi, 123<br>08001 Barcelona</p>
+                    <p><i class="far fa-clock me-2"></i>Dilluns a Divendres: 11:00 - 23:00</p>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <h5>Segueix-nos</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/sushitrack" class="text-white me-3"><i
+                                class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://www.facebook.com/sushitrack" class="text-white me-3"><i
+                                class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://www.twitter.com/sushitrack" class="text-white"><i
+                                class="fab fa-twitter fa-2x"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 text-md-end">
+                    <h5><i class="fas fa-store me-2"></i>Qui Som</h5>
+                    <p><i class="fas fa-truck me-2"></i>SushiTrack és la teva Food Truck especialitzada en sushi fresc i
+                        autèntic. Portem l'autèntica cuina japonesa a tots els racons.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Alerta de Cookies -->
+    <div class="cookie-alert" id="cookieAlert">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-8 text-center text-md-start">
+                    <p class="mb-0">
+                        <i class="fas fa-cookie-bite me-2"></i>
+                        Utilitzem cookies per millorar la teva experiència. Si continues navegant, acceptes la nostra
+                        <a href="#" class="text-white text-decoration-underline">política de cookies</a>.
+                    </p>
+                </div>
+                <div class="col-12 col-md-4 text-center text-md-end">
+                    <button class="btn btn-outline-light btn-sm me-2" onclick="rechazarCookies()">Rebutjar</button>
+                    <button class="btn btn-primary btn-sm" onclick="aceptarCookies()">Acceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar el carrusel y los tooltips
+        document.addEventListener('DOMContentLoaded', function () {
+            var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExample'), {
+                interval: 3000,
+                wrap: true
+            });
+    
+            // Inicializar todos los tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+    
+            // Verificar si ya se han aceptado las cookies
+            if (!localStorage.getItem('cookiesAceptadas')) {
+                document.getElementById('cookieAlert').style.display = 'block';
+            } else {
+                document.getElementById('cookieAlert').style.display = 'none';
+            }
+        });
+    
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            if (username && password) {
+                document.getElementById('welcomeMessage').textContent = `Benvingut, ${username}!`;
+                document.getElementById('loginButton').style.display = 'none';
+                document.getElementById('logoutButton').style.display = 'block';
+                document.getElementById('loginModal').querySelector('.btn-close').click();
+            }
+        }
+    
+        function logout() {
+            document.getElementById('welcomeMessage').textContent = '';
+            document.getElementById('loginButton').style.display = 'block';
+            document.getElementById('logoutButton').style.display = 'none';
+        }
+    
+        document.getElementById('logoutButton').addEventListener('click', logout);
+    
+        // Funciones para aceptar/rechazar cookies
+        function aceptarCookies() {
+            localStorage.setItem('cookiesAceptadas', 'true');
+            document.getElementById('cookieAlert').style.display = 'none';
+        }
+    
+        function rechazarCookies() {
+            localStorage.setItem('cookiesAceptadas', 'false');
+            document.getElementById('cookieAlert').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
